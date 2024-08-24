@@ -1,12 +1,18 @@
-import express from "express"
-import userRoutes from "./routes/users.js"
-import cors from "cors"
+import express from "express";
+import userRoutes from "./routes/users.js";
+import cors from "cors";
 
-const app = express()
+const app = express();
 
-app.use(express.json())
-app.use(cors())
+app.use(express.json());
 
-app.use("/", userRoutes)
+// Configurar CORS para permitir apenas o domínio específico
+app.use(cors({
+  origin: 'http://3.238.158.21:3000', // Altere para o endereço correto do seu frontend
+}));
 
-app.listen(8800)
+app.use("/", userRoutes);
+
+app.listen(8800, () => {
+  console.log('Backend is running on http://3.238.158.21:8800');
+});
