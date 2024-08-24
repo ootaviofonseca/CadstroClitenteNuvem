@@ -8,11 +8,11 @@ app.use(express.json());
 
 // Configurar CORS para permitir apenas o domínio específico
 app.use(cors({
-  origin: 'http://3.238.158.21:3000', // Altere para o endereço correto do seu frontend
+  origin: 'http://localhost:3000', // Altere para o endereço correto do seu frontend
 }));
 
 app.use("/", userRoutes);
 
 app.listen(8800, () => {
-  console.log('Backend is running on http://3.238.158.21:8800');
+  console.log('Backend is running on http://localhost:8800');
 });
