@@ -9,7 +9,7 @@ export const db = mysql.createConnection({
 import mysql from "mysql"
 
 export const db = mysql.createConnection({
-    host: 'cliente.cbs4syus6w2y.us-east-1.rds.amazonaws.com',
+    host: 'http://3.238.158.21',
     port: "3306",
     user: 'mysuperuser',
     password: 'mysuperuser',
