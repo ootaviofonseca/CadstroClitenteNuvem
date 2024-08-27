@@ -79,7 +79,7 @@ const Form = ({ getUsers, onEdit, setOnEdit }) => {
     try {
       if (onEdit) {
         // Requisição PUT para atualizar o usuário existente
-        const response = await axios.put(`http://localhost:8800/${onEdit.id}`, {
+        const response = await axios.put(`http://3.238.158.21:8800/${onEdit.id}`, {
           nome: user.nome.value,
           email: user.email.value,
           fone: user.fone.value,
