@@ -1,11 +1,4 @@
-/*import mysql from "mysql"
-
-export const db = mysql.createConnection({
-    host: "localhost",
-    user: "root",
-    password: "willdev123",
-    database: "crud"
-})*/
+// Desc: Arquivo de conexão com o banco de dados
 import mysql from "mysql"
 
 export const db = mysql.createConnection({

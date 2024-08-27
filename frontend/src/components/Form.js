@@ -52,9 +52,14 @@ const Form = ({ getUsers, onEdit, setOnEdit }) => {
       user.nome.value = onEdit.nome || '';
       user.email.value = onEdit.email || '';
       user.fone.value = onEdit.fone || '';
-      user.data_nascimento.value = onEdit.data_nascimento || '';
+      user.data_nascimento.value = onEdit.data_nascimento ? formatDateForInput(onEdit.data_nascimento) : '';
     }
   }, [onEdit]);
+
+  const formatDateForInput = (date) => { // Ajuste a formatação da data 
+   
+    return new Date(date).toISOString().split('T')[0];
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -99,7 +104,8 @@ const Form = ({ getUsers, onEdit, setOnEdit }) => {
       user.data_nascimento.value = "";
 
       setOnEdit(null);
-      getUsers();
+      window.location.reload(); // Atualiza a página para exibir o novo usuário
+      //getUsers();
     } catch (error) {
       // Exibir mensagem de erro
       toast.error(error.response?.data || 'Erro ao enviar dados');
