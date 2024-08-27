@@ -91,7 +91,14 @@ const Grid = ({ setOnEdit }) => {
         style={{ margin: "20px", padding: "10px", width: "calc(100% - 40px)" }}
       />
       <Table>
-        {/* Thead e Tbody... */}
+      <Thead>
+          <Tr>
+            <Th>Nome</Th>
+            <Th>Email</Th>
+            <Th >CPF</Th>
+            <Th>Ações</Th>
+          </Tr>
+        </Thead>
         <Tbody>
           {users.map((item, i) => (
             <Tr key={i}>
