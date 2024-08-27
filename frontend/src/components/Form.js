@@ -51,7 +51,7 @@ const Form = ({ getUsers, onEdit, setOnEdit }) => {
 
       user.nome.value = onEdit.nome || '';
       user.email.value = onEdit.email || '';
-      user.fone.value = onEdit.fone || '';
+      user.cpf.value = onEdit.cpf || '';
       user.data_nascimento.value = onEdit.data_nascimento ? formatDateForInput(onEdit.data_nascimento) : '';
     }
   }, [onEdit]);
@@ -70,7 +70,7 @@ const Form = ({ getUsers, onEdit, setOnEdit }) => {
     if (
       !user.nome.value ||
       !user.email.value ||
-      !user.fone.value ||
+      !user.cpf.value ||
       !user.data_nascimento.value
     ) {
       return toast.warn("Preencha todos os campos!");
@@ -82,7 +82,7 @@ const Form = ({ getUsers, onEdit, setOnEdit }) => {
         const response = await axios.put(`http://3.238.158.21:8800/${onEdit.id}`, {
           nome: user.nome.value,
           email: user.email.value,
-          fone: user.fone.value,
+          cpf: user.cpf.value,
           data_nascimento: user.data_nascimento.value,
         });
         toast.success(response.data);
@@ -91,7 +91,7 @@ const Form = ({ getUsers, onEdit, setOnEdit }) => {
         const response = await axios.post("http://localhost:8800", {
           nome: user.nome.value,
           email: user.email.value,
-          fone: user.fone.value,
+          cpf: user.cpf.value,
           data_nascimento: user.data_nascimento.value,
         });
         toast.success(response.data);
@@ -100,7 +100,7 @@ const Form = ({ getUsers, onEdit, setOnEdit }) => {
       // Limpar o formulário e atualizar a lista de usuários
       user.nome.value = "";
       user.email.value = "";
-      user.fone.value = "";
+      user.cpf.value = "";
       user.data_nascimento.value = "";
 
       setOnEdit(null);
@@ -123,8 +123,8 @@ const Form = ({ getUsers, onEdit, setOnEdit }) => {
         <Input name="email" type="email" />
       </InputArea>
       <InputArea>
-        <Label>Telefone</Label>
-        <Input name="fone" />
+        <Label>CPF</Label>
+        <Input name="cpf" />
       </InputArea>
       <InputArea>
         <Label>Data de Nascimento</Label>

@@ -6,9 +6,9 @@ const app = express();
 
 app.use(express.json());
 
-// Configurar CORS para permitir apenas o domínio específico
+
 app.use(cors({
-  origin: 'http://3.238.158.21:3000', // Altere para o endereço correto do seu frontend
+  origin: 'http://3.238.158.21:3000', // Edereco da EC2
 }));
 
 app.use("/", userRoutes);
