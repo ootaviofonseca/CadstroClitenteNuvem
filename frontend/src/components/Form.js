@@ -88,7 +88,7 @@ const Form = ({ getUsers, onEdit, setOnEdit }) => {
         toast.success(response.data);
       } else {
         // Requisição POST para criar um novo usuário
-        const response = await axios.post("http://localhost:8800", {
+        const response = await axios.post("http://3.238.158.21:8800", {
           nome: user.nome.value,
           email: user.email.value,
           cpf: user.cpf.value,
