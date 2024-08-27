@@ -58,7 +58,7 @@ export const deleteUser = (req, res) => {
 
 export const searchUsers = (req, res) => {
   const searchTerm = `%${req.query.q}%`;
-  const q = "SELECT * FROM clientes WHERE nome LIKE ? OR email LIKE ?";
+  const q = "SELECT * FROM clientes WHERE nome LIKE ? OR cpf LIKE ?";
 
   db.query(q, [searchTerm, searchTerm], (err, data) => {
     if (err) return res.json(err);

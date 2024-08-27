@@ -87,7 +87,7 @@ const Grid = ({ setOnEdit }) => {
         type="text"
         value={searchTerm}
         onChange={handleSearch}
-        placeholder="Buscar usuário...(Digite nome ou email)"
+        placeholder="Buscar usuário...(Digite nome ou cpf)"
         style={{ margin: "20px", padding: "10px", width: "calc(100% - 40px)" }}
       />
       <Table>
