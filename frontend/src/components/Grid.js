@@ -47,7 +47,7 @@ const Grid = ({ setOnEdit }) => {
 
   const fetchUsers = async (query = "") => {
     try {
-      const response = await axios.get(`http://localhost:8800/search?q=${query}`);
+      const response = await axios.get(`http://localhost:8800/users?q=${query}`);
       setUsers(response.data);
     } catch (error) {
       toast.error("Erro ao buscar usuários.");
