@@ -96,7 +96,7 @@ const Grid = ({ setOnEdit }) => {
             <Th>Nome</Th>
             <Th>Email</Th>
             <Th >CPF</Th>
-            <Th>Ações</Th>
+            <Th></Th>
           </Tr>
         </Thead>
         <Tbody>
